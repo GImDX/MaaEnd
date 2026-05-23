@@ -87,7 +87,9 @@
                             392.4,
                             570.7
                         ]
-                    ]
+                    ],
+                    "arrival_threshold": 6.0,
+                    "sprint_threshold": 999.0
                 }
             }
         },
