@@ -5,7 +5,7 @@
         "all_of": [
             "InMenuList"
         ],
-        "pre_delay": 0,
+        "pre_delay": 1000,
         "action": "Click",
         "target": [
             -20,
