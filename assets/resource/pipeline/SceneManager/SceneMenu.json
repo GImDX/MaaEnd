@@ -303,6 +303,92 @@
         "pre_delay": 0,
         "post_delay": 0
     },
+    "__ScenePrivateWorldEnterMenuTeam": {
+        "desc": "从大世界进入编队菜单",
+        "recognition": {
+            "type": "And",
+            "param": {
+                "all_of": [
+                    "InWorld"
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "__ScenePrivateMenuListEnterMenuTeam",
+            "[JumpBack]__ScenePrivateWorldEnterMenuList"
+        ]
+    },
+    "__ScenePrivateMenuListEnterMenuTeam": {
+        "desc": "从菜单列表进入编队菜单",
+        "recognition": "And",
+        "all_of": [
+            "InMenuList",
+            {
+                "recognition": {
+                    "type": "OCR",
+                    "param": {
+                        "roi": [
+                            -400,
+                            0,
+                            400,
+                            720
+                        ],
+                        "expected": [
+                            "编队",
+                            "編隊",
+                            "(?i)Team",
+                            "編成",
+                            "팀 편성"
+                        ]
+                    }
+                }
+            }
+        ],
+        "box_index": 1,
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "SceneManagerMenuListClickItemAction"
+            }
+        },
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "__ScenePrivateAnyEnterMenuTeamSuccess"
+        ]
+    },
+    "__ScenePrivateAnyEnterMenuTeamSuccess": {
+        "desc": "成功进入编队菜单",
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    0,
+                    0,
+                    100,
+                    100
+                ],
+                "template": "SceneManager/TeamChooseIcon.png",
+                "threshold": 0.9
+            }
+        },
+        "pre_wait_freezes": {
+            "time": 200,
+            "target": [
+                0,
+                0,
+                100,
+                200
+            ]
+        },
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0
+    },
     "__ScenePrivateWorldEnterMenuAICPlan": {
         "desc": "从大世界进入工业计划菜单",
         "recognition": {
