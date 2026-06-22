@@ -162,6 +162,7 @@
         "tasks/AutoEcoFarm.json",
         "tasks/PuzzleSolver.json",
         "tasks/ImportBluePrints.json",
+        "tasks/TeamChoose.json",
         // group: sanity_sink
         "tasks/AutoUseSpMedication.json",
         "tasks/AutoEssence.json",

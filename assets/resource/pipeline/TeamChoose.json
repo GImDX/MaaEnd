@@ -1,0 +1,28 @@
+{
+    "TeamChooseStart": {
+        "desc": "大世界队伍选择任务入口",
+        "pre_delay": 0,
+        "action": "Custom",
+        "custom_action": "SubTask",
+        "custom_action_param": {
+            "sub": [
+                "SceneChooseTeam"
+            ]
+        },
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "TeamChooseOnComplete"
+        ]
+    },
+    "TeamChooseOnComplete": {
+        "desc": "队伍选择完成后结束任务",
+        "pre_delay": 0,
+        "action": "StopTask",
+        "post_delay": 0,
+        "rate_limit": 0,
+        "focus": {
+            "Node.Action.Starting": "✅已完成队伍选择"
+        }
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "task": [
+        {
+            "name": "TeamChoose",
+            "label": "$task.TeamChoose.label",
+            "entry": "TeamChooseStart",
+            "description": "$task.TeamChoose.description",
+            "controller": [
+                "ADB",
+                "PlayCover",
+                "Win32-Front",
+                "Wlroots"
+            ],
+            "option": [
+                "TeamChoose"
+            ],
+            "group": [
+                "open_world"
+            ]
+        }
+    ],
+    "option": {
+        "TeamChoose": {
+            "type": "select",
+            "label": "$option.TeamChoose.label",
+            "default_case": "TeamChoose01",
+            "cases": [
+                {
+                    "name": "TeamChoose01",
+                    "label": "01",
+                    "pipeline_override": {
+                        "__ScenePrivateTeamChooseTextRecognition": {
+                            "expected": [
+                                "01"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "TeamChoose02",
+                    "label": "02",
+                    "pipeline_override": {
+                        "__ScenePrivateTeamChooseTextRecognition": {
+                            "expected": [
+                                "02"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "TeamChoose03",
+                    "label": "03",
+                    "pipeline_override": {
+                        "__ScenePrivateTeamChooseTextRecognition": {
+                            "expected": [
+                                "03"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "TeamChoose04",
+                    "label": "04",
+                    "pipeline_override": {
+                        "__ScenePrivateTeamChooseTextRecognition": {
+                            "expected": [
+                                "04"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "TeamChoose05",
+                    "label": "05",
+                    "pipeline_override": {
+                        "__ScenePrivateTeamChooseTextRecognition": {
+                            "expected": [
+                                "05"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
