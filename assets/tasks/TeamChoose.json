@@ -29,10 +29,12 @@
                     "name": "TeamChoose01",
                     "label": "01",
                     "pipeline_override": {
-                        "__ScenePrivateTeamChooseTextRecognition": {
-                            "expected": [
-                                "01"
-                            ]
+                        "TeamChooseStart": {
+                            "custom_action_param": {
+                                "sub": [
+                                    "SceneChooseTeam01"
+                                ]
+                            }
                         }
                     }
                 },
@@ -40,10 +42,12 @@
                     "name": "TeamChoose02",
                     "label": "02",
                     "pipeline_override": {
-                        "__ScenePrivateTeamChooseTextRecognition": {
-                            "expected": [
-                                "02"
-                            ]
+                        "TeamChooseStart": {
+                            "custom_action_param": {
+                                "sub": [
+                                    "SceneChooseTeam02"
+                                ]
+                            }
                         }
                     }
                 },
@@ -51,10 +55,12 @@
                     "name": "TeamChoose03",
                     "label": "03",
                     "pipeline_override": {
-                        "__ScenePrivateTeamChooseTextRecognition": {
-                            "expected": [
-                                "03"
-                            ]
+                        "TeamChooseStart": {
+                            "custom_action_param": {
+                                "sub": [
+                                    "SceneChooseTeam03"
+                                ]
+                            }
                         }
                     }
                 },
@@ -62,10 +68,12 @@
                     "name": "TeamChoose04",
                     "label": "04",
                     "pipeline_override": {
-                        "__ScenePrivateTeamChooseTextRecognition": {
-                            "expected": [
-                                "04"
-                            ]
+                        "TeamChooseStart": {
+                            "custom_action_param": {
+                                "sub": [
+                                    "SceneChooseTeam04"
+                                ]
+                            }
                         }
                     }
                 },
@@ -73,10 +81,12 @@
                     "name": "TeamChoose05",
                     "label": "05",
                     "pipeline_override": {
-                        "__ScenePrivateTeamChooseTextRecognition": {
-                            "expected": [
-                                "05"
-                            ]
+                        "TeamChooseStart": {
+                            "custom_action_param": {
+                                "sub": [
+                                    "SceneChooseTeam05"
+                                ]
+                            }
                         }
                     }
                 }
