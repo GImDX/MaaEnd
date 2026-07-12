@@ -1,0 +1,84 @@
+{
+    "configs": {
+        "name": "主菜单编队入口与编队界面识别",
+        "resource": "官服",
+        "controller": "Win32"
+    },
+    "cases": [
+        {
+            "name": "简体中文主菜单编队入口",
+            "image": "武陵_主菜单_简体中文_编队.png",
+            "hits": [
+                {
+                    "node": "__ScenePrivateMenuListEnterMenuTeam",
+                    "box": [
+                        1180,
+                        340,
+                        100,
+                        70
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "繁体中文主菜单编队入口",
+            "image": "武陵_主菜单_繁体中文_编队.png",
+            "hits": [
+                {
+                    "node": "__ScenePrivateMenuListEnterMenuTeam",
+                    "box": [
+                        1180,
+                        340,
+                        100,
+                        70
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "英文主菜单 Team 入口",
+            "image": "武陵_主菜单_英文_Team.png",
+            "hits": [
+                {
+                    "node": "__ScenePrivateMenuListEnterMenuTeam",
+                    "box": [
+                        1180,
+                        340,
+                        100,
+                        70
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "日文主菜单编成入口",
+            "image": "武陵_主菜单_日文_編成.png",
+            "hits": [
+                {
+                    "node": "__ScenePrivateMenuListEnterMenuTeam",
+                    "box": [
+                        1180,
+                        340,
+                        100,
+                        70
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "成功进入编队界面",
+            "image": "官服_编队_队伍05已选中_完整.png",
+            "hits": [
+                {
+                    "node": "__ScenePrivateAnyEnterMenuTeamSuccess",
+                    "box": [
+                        20,
+                        8,
+                        55,
+                        50
+                    ]
+                }
+            ]
+        }
+    ]
+}

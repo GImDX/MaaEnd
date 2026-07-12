@@ -1,0 +1,159 @@
+{
+    "configs": {
+        "name": "编队界面队伍 tab 状态识别",
+        "resource": "官服",
+        "controller": "Win32"
+    },
+    "cases": [
+        {
+            "name": "队伍 01 已选中",
+            "image": "官服_编队_队伍01已选中.png",
+            "hits": [
+                {
+                    "node": "__ScenePrivateTeamChooseTabAnchor",
+                    "box": [
+                        20,
+                        640,
+                        20,
+                        20
+                    ]
+                },
+                "__ScenePrivateTeamChooseTargetSelectedState01",
+                "__ScenePrivateTeamChooseTargetSelected01",
+                "__ScenePrivateTeamChooseTargetUnselectedState02",
+                "__ScenePrivateTeamChooseTargetUnselected02",
+                "__ScenePrivateTeamChooseTargetUnselectedState03",
+                "__ScenePrivateTeamChooseTargetUnselected03",
+                "__ScenePrivateTeamChooseTargetUnselectedState04",
+                "__ScenePrivateTeamChooseTargetUnselected04",
+                "__ScenePrivateTeamChooseTargetUnselectedState05",
+                "__ScenePrivateTeamChooseTargetUnselected05"
+            ]
+        },
+        {
+            "name": "队伍 01 已选中且队伍 02 悬停",
+            "image": "官服_编队_队伍01已选中_队伍02悬停.png",
+            "hits": [
+                {
+                    "node": "__ScenePrivateTeamChooseTabAnchor",
+                    "box": [
+                        20,
+                        640,
+                        20,
+                        20
+                    ]
+                },
+                "__ScenePrivateTeamChooseTargetSelectedState01",
+                "__ScenePrivateTeamChooseTargetSelected01",
+                "__ScenePrivateTeamChooseTargetUnselectedState02",
+                "__ScenePrivateTeamChooseTargetUnselected02",
+                "__ScenePrivateTeamChooseTargetUnselectedState03",
+                "__ScenePrivateTeamChooseTargetUnselected03",
+                "__ScenePrivateTeamChooseTargetUnselectedState04",
+                "__ScenePrivateTeamChooseTargetUnselected04",
+                "__ScenePrivateTeamChooseTargetUnselectedState05",
+                "__ScenePrivateTeamChooseTargetUnselected05"
+            ]
+        },
+        {
+            "name": "队伍 02 已选中",
+            "image": "官服_编队_队伍02已选中.png",
+            "hits": [
+                {
+                    "node": "__ScenePrivateTeamChooseTabAnchor",
+                    "box": [
+                        20,
+                        640,
+                        20,
+                        20
+                    ]
+                },
+                "__ScenePrivateTeamChooseTargetUnselectedState01",
+                "__ScenePrivateTeamChooseTargetUnselected01",
+                "__ScenePrivateTeamChooseTargetSelectedState02",
+                "__ScenePrivateTeamChooseTargetSelected02",
+                "__ScenePrivateTeamChooseTargetUnselectedState03",
+                "__ScenePrivateTeamChooseTargetUnselected03",
+                "__ScenePrivateTeamChooseTargetUnselectedState04",
+                "__ScenePrivateTeamChooseTargetUnselected04",
+                "__ScenePrivateTeamChooseTargetUnselectedState05",
+                "__ScenePrivateTeamChooseTargetUnselected05"
+            ]
+        },
+        {
+            "name": "队伍 03 已选中",
+            "image": "官服_编队_队伍03已选中.png",
+            "hits": [
+                {
+                    "node": "__ScenePrivateTeamChooseTabAnchor",
+                    "box": [
+                        20,
+                        640,
+                        20,
+                        20
+                    ]
+                },
+                "__ScenePrivateTeamChooseTargetUnselectedState01",
+                "__ScenePrivateTeamChooseTargetUnselected01",
+                "__ScenePrivateTeamChooseTargetUnselectedState02",
+                "__ScenePrivateTeamChooseTargetUnselected02",
+                "__ScenePrivateTeamChooseTargetSelectedState03",
+                "__ScenePrivateTeamChooseTargetSelected03",
+                "__ScenePrivateTeamChooseTargetUnselectedState04",
+                "__ScenePrivateTeamChooseTargetUnselected04",
+                "__ScenePrivateTeamChooseTargetUnselectedState05",
+                "__ScenePrivateTeamChooseTargetUnselected05"
+            ]
+        },
+        {
+            "name": "队伍 04 已选中",
+            "image": "官服_编队_队伍04已选中.png",
+            "hits": [
+                {
+                    "node": "__ScenePrivateTeamChooseTabAnchor",
+                    "box": [
+                        20,
+                        640,
+                        20,
+                        20
+                    ]
+                },
+                "__ScenePrivateTeamChooseTargetUnselectedState01",
+                "__ScenePrivateTeamChooseTargetUnselected01",
+                "__ScenePrivateTeamChooseTargetUnselectedState02",
+                "__ScenePrivateTeamChooseTargetUnselected02",
+                "__ScenePrivateTeamChooseTargetUnselectedState03",
+                "__ScenePrivateTeamChooseTargetUnselected03",
+                "__ScenePrivateTeamChooseTargetSelectedState04",
+                "__ScenePrivateTeamChooseTargetSelected04",
+                "__ScenePrivateTeamChooseTargetUnselectedState05",
+                "__ScenePrivateTeamChooseTargetUnselected05"
+            ]
+        },
+        {
+            "name": "队伍 05 已选中",
+            "image": "官服_编队_队伍05已选中.png",
+            "hits": [
+                {
+                    "node": "__ScenePrivateTeamChooseTabAnchor",
+                    "box": [
+                        20,
+                        640,
+                        20,
+                        20
+                    ]
+                },
+                "__ScenePrivateTeamChooseTargetUnselectedState01",
+                "__ScenePrivateTeamChooseTargetUnselected01",
+                "__ScenePrivateTeamChooseTargetUnselectedState02",
+                "__ScenePrivateTeamChooseTargetUnselected02",
+                "__ScenePrivateTeamChooseTargetUnselectedState03",
+                "__ScenePrivateTeamChooseTargetUnselected03",
+                "__ScenePrivateTeamChooseTargetUnselectedState04",
+                "__ScenePrivateTeamChooseTargetUnselected04",
+                "__ScenePrivateTeamChooseTargetSelectedState05",
+                "__ScenePrivateTeamChooseTargetSelected05"
+            ]
+        }
+    ]
+}

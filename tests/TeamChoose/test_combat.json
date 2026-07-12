@@ -1,0 +1,30 @@
+{
+    "configs": {
+        "name": "大世界战斗状态识别",
+        "resource": "官服",
+        "controller": "Win32"
+    },
+    "cases": [
+        {
+            "name": "战斗状态下左上角菜单自动收起",
+            "image": "官服_大世界_战斗.png",
+            "hits": [
+                {
+                    "node": "__ScenePrivateWorldCombatLeftMenuHide",
+                    "box": [
+                        173,
+                        19,
+                        36,
+                        36
+                    ]
+                },
+                "InWorldCombat"
+            ]
+        },
+        {
+            "name": "非战斗状态不应命中",
+            "image": "官服_大世界_非战斗.png",
+            "hits": []
+        }
+    ]
+}
