@@ -12,76 +12,6 @@
         "post_delay": 0,
         "rate_limit": 0
     },
-    "SceneChooseTeam01": {
-        "desc": "从任意界面选择目标队伍 01 并返回大世界",
-        "pre_delay": 0,
-        "action": "Custom",
-        "custom_action": "SubTask",
-        "custom_action_param": {
-            "sub": [
-                "__ScenePrivateTeamChooseEnter",
-                "__ScenePrivateTeamChooseCheck01"
-            ]
-        },
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "SceneChooseTeam02": {
-        "desc": "从任意界面选择目标队伍 02 并返回大世界",
-        "pre_delay": 0,
-        "action": "Custom",
-        "custom_action": "SubTask",
-        "custom_action_param": {
-            "sub": [
-                "__ScenePrivateTeamChooseEnter",
-                "__ScenePrivateTeamChooseCheck02"
-            ]
-        },
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "SceneChooseTeam03": {
-        "desc": "从任意界面选择目标队伍 03 并返回大世界",
-        "pre_delay": 0,
-        "action": "Custom",
-        "custom_action": "SubTask",
-        "custom_action_param": {
-            "sub": [
-                "__ScenePrivateTeamChooseEnter",
-                "__ScenePrivateTeamChooseCheck03"
-            ]
-        },
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "SceneChooseTeam04": {
-        "desc": "从任意界面选择目标队伍 04 并返回大世界",
-        "pre_delay": 0,
-        "action": "Custom",
-        "custom_action": "SubTask",
-        "custom_action_param": {
-            "sub": [
-                "__ScenePrivateTeamChooseEnter",
-                "__ScenePrivateTeamChooseCheck04"
-            ]
-        },
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "SceneChooseTeam05": {
-        "desc": "从任意界面选择目标队伍 05 并返回大世界",
-        "pre_delay": 0,
-        "action": "Custom",
-        "custom_action": "SubTask",
-        "custom_action_param": {
-            "sub": [
-                "__ScenePrivateTeamChooseEnter",
-                "__ScenePrivateTeamChooseCheck05"
-            ]
-        },
-        "post_delay": 0,
-        "rate_limit": 0
-    },
     "__ScenePrivateTeamChooseEnter": {
         "desc": "检查战斗状态后进入编队界面",
         "pre_delay": 0,
@@ -103,604 +33,6 @@
         "focus": {
             "Node.Action.Succeeded": "进入队伍界面"
         }
-    },
-    "__ScenePrivateTeamChooseCheck01": {
-        "desc": "检查编队界面目标队伍 01 状态",
-        "recognition": "DirectHit",
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0,
-        "next": [
-            "__ScenePrivateTeamChooseTargetSelected01",
-            "__ScenePrivateTeamChooseTargetUnselected01",
-            "__ScenePrivateTeamChooseFailed"
-        ]
-    },
-    "__ScenePrivateTeamChooseCheck02": {
-        "desc": "检查编队界面目标队伍 02 状态",
-        "recognition": "DirectHit",
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0,
-        "next": [
-            "__ScenePrivateTeamChooseTargetSelected02",
-            "__ScenePrivateTeamChooseTargetUnselected02",
-            "__ScenePrivateTeamChooseFailed"
-        ]
-    },
-    "__ScenePrivateTeamChooseCheck03": {
-        "desc": "检查编队界面目标队伍 03 状态",
-        "recognition": "DirectHit",
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0,
-        "next": [
-            "__ScenePrivateTeamChooseTargetSelected03",
-            "__ScenePrivateTeamChooseTargetUnselected03",
-            "__ScenePrivateTeamChooseFailed"
-        ]
-    },
-    "__ScenePrivateTeamChooseCheck04": {
-        "desc": "检查编队界面目标队伍 04 状态",
-        "recognition": "DirectHit",
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0,
-        "next": [
-            "__ScenePrivateTeamChooseTargetSelected04",
-            "__ScenePrivateTeamChooseTargetUnselected04",
-            "__ScenePrivateTeamChooseFailed"
-        ]
-    },
-    "__ScenePrivateTeamChooseCheck05": {
-        "desc": "检查编队界面目标队伍 05 状态",
-        "recognition": "DirectHit",
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0,
-        "next": [
-            "__ScenePrivateTeamChooseTargetSelected05",
-            "__ScenePrivateTeamChooseTargetUnselected05",
-            "__ScenePrivateTeamChooseFailed"
-        ]
-    },
-    "__ScenePrivateTeamChooseTabAnchor": {
-        "desc": "识别左下角队伍 tab 的编辑图标",
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            -90,
-            100,
-            70
-        ],
-        "template": "SceneManager/TeamChooseTabEdit.png",
-        "threshold": 0.9,
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "__ScenePrivateTeamChooseTargetUnselectedState01": {
-        "desc": "确认目标队伍 01 按钮未选中",
-        "recognition": "ColorMatch",
-        "roi": "__ScenePrivateTeamChooseTabAnchor",
-        "roi_offset": [
-            44,
-            24,
-            51,
-            1
-        ],
-        "lower": [
-            0,
-            0,
-            0
-        ],
-        "upper": [
-            145,
-            145,
-            145
-        ],
-        "connected": true,
-        "count": 500,
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "__ScenePrivateTeamChooseTargetUnselectedState02": {
-        "desc": "确认目标队伍 02 按钮未选中",
-        "recognition": "ColorMatch",
-        "roi": "__ScenePrivateTeamChooseTabAnchor",
-        "roi_offset": [
-            115,
-            24,
-            51,
-            1
-        ],
-        "lower": [
-            0,
-            0,
-            0
-        ],
-        "upper": [
-            145,
-            145,
-            145
-        ],
-        "connected": true,
-        "count": 500,
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "__ScenePrivateTeamChooseTargetUnselectedState03": {
-        "desc": "确认目标队伍 03 按钮未选中",
-        "recognition": "ColorMatch",
-        "roi": "__ScenePrivateTeamChooseTabAnchor",
-        "roi_offset": [
-            186,
-            24,
-            51,
-            1
-        ],
-        "lower": [
-            0,
-            0,
-            0
-        ],
-        "upper": [
-            145,
-            145,
-            145
-        ],
-        "connected": true,
-        "count": 500,
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "__ScenePrivateTeamChooseTargetUnselectedState04": {
-        "desc": "确认目标队伍 04 按钮未选中",
-        "recognition": "ColorMatch",
-        "roi": "__ScenePrivateTeamChooseTabAnchor",
-        "roi_offset": [
-            257,
-            24,
-            51,
-            1
-        ],
-        "lower": [
-            0,
-            0,
-            0
-        ],
-        "upper": [
-            145,
-            145,
-            145
-        ],
-        "connected": true,
-        "count": 500,
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "__ScenePrivateTeamChooseTargetUnselectedState05": {
-        "desc": "确认目标队伍 05 按钮未选中",
-        "recognition": "ColorMatch",
-        "roi": "__ScenePrivateTeamChooseTabAnchor",
-        "roi_offset": [
-            328,
-            24,
-            51,
-            1
-        ],
-        "lower": [
-            0,
-            0,
-            0
-        ],
-        "upper": [
-            145,
-            145,
-            145
-        ],
-        "connected": true,
-        "count": 500,
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "__ScenePrivateTeamChooseTargetSelectedState01": {
-        "desc": "确认目标队伍 01 按钮已选中",
-        "recognition": "ColorMatch",
-        "roi": "__ScenePrivateTeamChooseTabAnchor",
-        "roi_offset": [
-            44,
-            24,
-            51,
-            1
-        ],
-        "lower": [
-            150,
-            150,
-            150
-        ],
-        "upper": [
-            245,
-            245,
-            245
-        ],
-        "connected": true,
-        "count": 500,
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "__ScenePrivateTeamChooseTargetSelectedState02": {
-        "desc": "确认目标队伍 02 按钮已选中",
-        "recognition": "ColorMatch",
-        "roi": "__ScenePrivateTeamChooseTabAnchor",
-        "roi_offset": [
-            115,
-            24,
-            51,
-            1
-        ],
-        "lower": [
-            150,
-            150,
-            150
-        ],
-        "upper": [
-            245,
-            245,
-            245
-        ],
-        "connected": true,
-        "count": 500,
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "__ScenePrivateTeamChooseTargetSelectedState03": {
-        "desc": "确认目标队伍 03 按钮已选中",
-        "recognition": "ColorMatch",
-        "roi": "__ScenePrivateTeamChooseTabAnchor",
-        "roi_offset": [
-            186,
-            24,
-            51,
-            1
-        ],
-        "lower": [
-            150,
-            150,
-            150
-        ],
-        "upper": [
-            245,
-            245,
-            245
-        ],
-        "connected": true,
-        "count": 500,
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "__ScenePrivateTeamChooseTargetSelectedState04": {
-        "desc": "确认目标队伍 04 按钮已选中",
-        "recognition": "ColorMatch",
-        "roi": "__ScenePrivateTeamChooseTabAnchor",
-        "roi_offset": [
-            257,
-            24,
-            51,
-            1
-        ],
-        "lower": [
-            150,
-            150,
-            150
-        ],
-        "upper": [
-            245,
-            245,
-            245
-        ],
-        "connected": true,
-        "count": 500,
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "__ScenePrivateTeamChooseTargetSelectedState05": {
-        "desc": "确认目标队伍 05 按钮已选中",
-        "recognition": "ColorMatch",
-        "roi": "__ScenePrivateTeamChooseTabAnchor",
-        "roi_offset": [
-            328,
-            24,
-            51,
-            1
-        ],
-        "lower": [
-            150,
-            150,
-            150
-        ],
-        "upper": [
-            245,
-            245,
-            245
-        ],
-        "connected": true,
-        "count": 500,
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0
-    },
-    "__ScenePrivateTeamChooseTargetSelected01": {
-        "desc": "确认目标队伍 01 已选中",
-        "recognition": "And",
-        "all_of": [
-            "__ScenePrivateTeamChooseTabAnchor",
-            "__ScenePrivateTeamChooseTargetSelectedState01"
-        ],
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0,
-        "next": [
-            "__ScenePrivateTeamChooseConfirm"
-        ],
-        "focus": {
-            "Node.Recognition.Succeeded": "目标队伍 01 已选中"
-        }
-    },
-    "__ScenePrivateTeamChooseTargetSelected02": {
-        "desc": "确认目标队伍 02 已选中",
-        "recognition": "And",
-        "all_of": [
-            "__ScenePrivateTeamChooseTabAnchor",
-            "__ScenePrivateTeamChooseTargetSelectedState02"
-        ],
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0,
-        "next": [
-            "__ScenePrivateTeamChooseConfirm"
-        ],
-        "focus": {
-            "Node.Recognition.Succeeded": "目标队伍 02 已选中"
-        }
-    },
-    "__ScenePrivateTeamChooseTargetSelected03": {
-        "desc": "确认目标队伍 03 已选中",
-        "recognition": "And",
-        "all_of": [
-            "__ScenePrivateTeamChooseTabAnchor",
-            "__ScenePrivateTeamChooseTargetSelectedState03"
-        ],
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0,
-        "next": [
-            "__ScenePrivateTeamChooseConfirm"
-        ],
-        "focus": {
-            "Node.Recognition.Succeeded": "目标队伍 03 已选中"
-        }
-    },
-    "__ScenePrivateTeamChooseTargetSelected04": {
-        "desc": "确认目标队伍 04 已选中",
-        "recognition": "And",
-        "all_of": [
-            "__ScenePrivateTeamChooseTabAnchor",
-            "__ScenePrivateTeamChooseTargetSelectedState04"
-        ],
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0,
-        "next": [
-            "__ScenePrivateTeamChooseConfirm"
-        ],
-        "focus": {
-            "Node.Recognition.Succeeded": "目标队伍 04 已选中"
-        }
-    },
-    "__ScenePrivateTeamChooseTargetSelected05": {
-        "desc": "确认目标队伍 05 已选中",
-        "recognition": "And",
-        "all_of": [
-            "__ScenePrivateTeamChooseTabAnchor",
-            "__ScenePrivateTeamChooseTargetSelectedState05"
-        ],
-        "pre_delay": 0,
-        "post_delay": 0,
-        "rate_limit": 0,
-        "next": [
-            "__ScenePrivateTeamChooseConfirm"
-        ],
-        "focus": {
-            "Node.Recognition.Succeeded": "目标队伍 05 已选中"
-        }
-    },
-    "__ScenePrivateTeamChooseTargetUnselected01": {
-        "desc": "选择未选中的目标队伍 01，点击后显式确认选中态",
-        "recognition": "And",
-        "all_of": [
-            "__ScenePrivateTeamChooseTabAnchor",
-            "__ScenePrivateTeamChooseTargetUnselectedState01"
-        ],
-        "pre_delay": 0,
-        "action": "Click",
-        "target_offset": [
-            44,
-            24,
-            51,
-            1
-        ],
-        "post_wait_freezes": 200,
-        "post_delay": 0,
-        "next": [
-            "__ScenePrivateTeamChooseTargetSelected01",
-            "__ScenePrivateTeamChooseFailed"
-        ],
-        "focus": {
-            "Node.Action.Succeeded": "选择队伍 01"
-        }
-    },
-    "__ScenePrivateTeamChooseTargetUnselected02": {
-        "desc": "选择未选中的目标队伍 02，点击后显式确认选中态",
-        "recognition": "And",
-        "all_of": [
-            "__ScenePrivateTeamChooseTabAnchor",
-            "__ScenePrivateTeamChooseTargetUnselectedState02"
-        ],
-        "pre_delay": 0,
-        "action": "Click",
-        "target_offset": [
-            115,
-            24,
-            51,
-            1
-        ],
-        "post_wait_freezes": 200,
-        "post_delay": 0,
-        "next": [
-            "__ScenePrivateTeamChooseTargetSelected02",
-            "__ScenePrivateTeamChooseFailed"
-        ],
-        "focus": {
-            "Node.Action.Succeeded": "选择队伍 02"
-        }
-    },
-    "__ScenePrivateTeamChooseTargetUnselected03": {
-        "desc": "选择未选中的目标队伍 03，点击后显式确认选中态",
-        "recognition": "And",
-        "all_of": [
-            "__ScenePrivateTeamChooseTabAnchor",
-            "__ScenePrivateTeamChooseTargetUnselectedState03"
-        ],
-        "pre_delay": 0,
-        "action": "Click",
-        "target_offset": [
-            186,
-            24,
-            51,
-            1
-        ],
-        "post_wait_freezes": 200,
-        "post_delay": 0,
-        "next": [
-            "__ScenePrivateTeamChooseTargetSelected03",
-            "__ScenePrivateTeamChooseFailed"
-        ],
-        "focus": {
-            "Node.Action.Succeeded": "选择队伍 03"
-        }
-    },
-    "__ScenePrivateTeamChooseTargetUnselected04": {
-        "desc": "选择未选中的目标队伍 04，点击后显式确认选中态",
-        "recognition": "And",
-        "all_of": [
-            "__ScenePrivateTeamChooseTabAnchor",
-            "__ScenePrivateTeamChooseTargetUnselectedState04"
-        ],
-        "pre_delay": 0,
-        "action": "Click",
-        "target_offset": [
-            257,
-            24,
-            51,
-            1
-        ],
-        "post_wait_freezes": 200,
-        "post_delay": 0,
-        "next": [
-            "__ScenePrivateTeamChooseTargetSelected04",
-            "__ScenePrivateTeamChooseFailed"
-        ],
-        "focus": {
-            "Node.Action.Succeeded": "选择队伍 04"
-        }
-    },
-    "__ScenePrivateTeamChooseTargetUnselected05": {
-        "desc": "选择未选中的目标队伍 05，点击后显式确认选中态",
-        "recognition": "And",
-        "all_of": [
-            "__ScenePrivateTeamChooseTabAnchor",
-            "__ScenePrivateTeamChooseTargetUnselectedState05"
-        ],
-        "pre_delay": 0,
-        "action": "Click",
-        "target_offset": [
-            328,
-            24,
-            51,
-            1
-        ],
-        "post_wait_freezes": 200,
-        "post_delay": 0,
-        "next": [
-            "__ScenePrivateTeamChooseTargetSelected05",
-            "__ScenePrivateTeamChooseFailed"
-        ],
-        "focus": {
-            "Node.Action.Succeeded": "选择队伍 05"
-        }
-    },
-    "__ScenePrivateTeamChooseConfirm": {
-        "desc": "确认队伍选择",
-        "recognition": "TemplateMatch",
-        "roi": [
-            1080,
-            600,
-            200,
-            120
-        ],
-        "template": [
-            "Common/Button/YellowConfirmButtonType2.png",
-            "Common/Button/WhiteConfirmButtonType2.png"
-        ],
-        "threshold": 0.8,
-        "pre_delay": 0,
-        "action": "Click",
-        "post_wait_freezes": 200,
-        "post_delay": 0,
-        "next": [
-            "__ScenePrivateTeamChooseReturnWorld"
-        ],
-        "focus": {
-            "Node.Action.Succeeded": "确认队伍选择"
-        }
-    },
-    "__ScenePrivateTeamChooseFailed": {
-        "desc": "队伍切换失败",
-        "pre_delay": 0,
-        "action": "Custom",
-        "custom_action": "FalseAction",
-        "post_delay": 0,
-        "rate_limit": 0,
-        "focus": {
-            "Node.Action.Failed": "队伍切换后未确认目标队伍已选中"
-        }
-    },
-    "__ScenePrivateTeamChooseReturnWorld": {
-        "desc": "返回大世界",
-        "pre_delay": 0,
-        "action": {
-            "type": "Custom",
-            "param": {
-                "custom_action": "SubTask",
-                "custom_action_param": {
-                    "sub": [
-                        "SceneAnyEnterWorld"
-                    ]
-                }
-            }
-        },
-        "post_delay": 0,
-        "rate_limit": 0
     },
     "__ScenePrivateTeamChooseCombatCheck": {
         "desc": "进入编队界面前检查是否处于战斗状态",
@@ -795,6 +127,74 @@
             "InWorld"
         ],
         "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0
+    },
+    "__ScenePrivateTeamChooseTabAnchor": {
+        "desc": "识别左下角队伍 tab 的编辑图标",
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            -90,
+            100,
+            70
+        ],
+        "template": "SceneManager/TeamChooseTabEdit.png",
+        "threshold": 0.9,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0
+    },
+    "__ScenePrivateTeamChooseConfirm": {
+        "desc": "确认队伍选择",
+        "recognition": "TemplateMatch",
+        "roi": [
+            1080,
+            600,
+            200,
+            120
+        ],
+        "template": [
+            "Common/Button/YellowConfirmButtonType2.png",
+            "Common/Button/WhiteConfirmButtonType2.png"
+        ],
+        "threshold": 0.8,
+        "pre_delay": 0,
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "post_delay": 0,
+        "next": [
+            "__ScenePrivateTeamChooseReturnWorld"
+        ],
+        "focus": {
+            "Node.Action.Succeeded": "确认队伍选择"
+        }
+    },
+    "__ScenePrivateTeamChooseFailed": {
+        "desc": "队伍切换失败",
+        "pre_delay": 0,
+        "action": "Custom",
+        "custom_action": "FalseAction",
+        "post_delay": 0,
+        "rate_limit": 0,
+        "focus": {
+            "Node.Action.Failed": "队伍切换后未确认目标队伍已选中"
+        }
+    },
+    "__ScenePrivateTeamChooseReturnWorld": {
+        "desc": "返回大世界",
+        "pre_delay": 0,
+        "action": {
+            "type": "Custom",
+            "param": {
+                "custom_action": "SubTask",
+                "custom_action_param": {
+                    "sub": [
+                        "SceneAnyEnterWorld"
+                    ]
+                }
+            }
+        },
         "post_delay": 0,
         "rate_limit": 0
     }

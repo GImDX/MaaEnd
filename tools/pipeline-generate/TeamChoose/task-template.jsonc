@@ -1,0 +1,61 @@
+{
+    "task": [
+        {
+            "name": "TeamChoose",
+            "label": "$task.TeamChoose.label",
+            "entry": "TeamChooseStart",
+            "description": "$task.TeamChoose.description",
+            "controller": [
+                "ADB",
+                "PlayCover",
+                "Win32-Front",
+                "Wlroots"
+            ],
+            "option": [
+                "TeamChoose",
+                "TeamChooseAllowCombatTeleport"
+            ],
+            "group": [
+                "open_world"
+            ]
+        }
+    ],
+    "option": {
+        "TeamChoose": {
+            "type": "select",
+            "label": "$option.TeamChoose.label",
+            "default_case": "TeamChoose01",
+            "cases": "${TeamCases}"
+        },
+        "TeamChooseAllowCombatTeleport": {
+            "type": "switch",
+            "label": "$option.TeamChooseAllowCombatTeleport.label",
+            "description": "$option.TeamChooseAllowCombatTeleport.description",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "__ScenePrivateTeamChooseInCombatTeleport": {
+                            "enabled": true
+                        },
+                        "__ScenePrivateTeamChooseInCombatFailed": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "__ScenePrivateTeamChooseInCombatTeleport": {
+                            "enabled": false
+                        },
+                        "__ScenePrivateTeamChooseInCombatFailed": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

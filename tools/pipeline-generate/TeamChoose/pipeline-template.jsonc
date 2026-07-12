@@ -1,0 +1,126 @@
+{
+    "SceneChooseTeam${TeamId}": {
+        "desc": "从任意界面选择目标队伍 ${TeamId} 并返回大世界",
+        "pre_delay": 0,
+        "action": "Custom",
+        "custom_action": "SubTask",
+        "custom_action_param": {
+            "sub": [
+                "__ScenePrivateTeamChooseEnter",
+                "__ScenePrivateTeamChooseCheck${TeamId}"
+            ]
+        },
+        "post_delay": 0,
+        "rate_limit": 0
+    },
+    "__ScenePrivateTeamChooseCheck${TeamId}": {
+        "desc": "检查编队界面目标队伍 ${TeamId} 状态",
+        "recognition": "DirectHit",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "__ScenePrivateTeamChooseTargetSelected${TeamId}",
+            "__ScenePrivateTeamChooseTargetUnselected${TeamId}",
+            "__ScenePrivateTeamChooseFailed"
+        ]
+    },
+    "__ScenePrivateTeamChooseTargetUnselectedState${TeamId}": {
+        "desc": "确认目标队伍 ${TeamId} 按钮未选中",
+        "recognition": "ColorMatch",
+        "roi": "__ScenePrivateTeamChooseTabAnchor",
+        "roi_offset": [
+            "${TabOffsetX}",
+            24,
+            51,
+            1
+        ],
+        "method": 6,
+        "lower": [
+            0
+        ],
+        "upper": [
+            145
+        ],
+        "connected": true,
+        "count": 500,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0
+    },
+    "__ScenePrivateTeamChooseTargetSelectedState${TeamId}": {
+        "desc": "确认目标队伍 ${TeamId} 按钮已选中",
+        "recognition": "ColorMatch",
+        "roi": "__ScenePrivateTeamChooseTabAnchor",
+        "roi_offset": [
+            "${TabOffsetX}",
+            24,
+            51,
+            1
+        ],
+        "method": 6,
+        "lower": [
+            150
+        ],
+        "upper": [
+            245
+        ],
+        "connected": true,
+        "count": 500,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0
+    },
+    "__ScenePrivateTeamChooseTargetSelected${TeamId}": {
+        "desc": "确认目标队伍 ${TeamId} 已选中",
+        "recognition": "And",
+        "all_of": [
+            "__ScenePrivateTeamChooseTabAnchor",
+            "__ScenePrivateTeamChooseTargetSelectedState${TeamId}"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "__ScenePrivateTeamChooseConfirm"
+        ],
+        "focus": {
+            "Node.Recognition.Succeeded": "目标队伍 ${TeamId} 已选中"
+        }
+    },
+    "__ScenePrivateTeamChooseTargetUnselected${TeamId}": {
+        "desc": "选择未选中的目标队伍 ${TeamId}，点击后显式确认选中态",
+        "recognition": "And",
+        "all_of": [
+            "__ScenePrivateTeamChooseTabAnchor",
+            "__ScenePrivateTeamChooseTargetUnselectedState${TeamId}"
+        ],
+        "pre_delay": 0,
+        "action": "Click",
+        "target_offset": [
+            "${TabOffsetX}",
+            24,
+            51,
+            1
+        ],
+        "post_wait_freezes": {
+            "time": 200,
+            "target": true,
+            "target_offset": [
+                "${TabOffsetX}",
+                24,
+                51,
+                1
+            ]
+        },
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "__ScenePrivateTeamChooseTargetSelected${TeamId}",
+            "__ScenePrivateTeamChooseFailed"
+        ],
+        "focus": {
+            "Node.Action.Succeeded": "选择队伍 ${TeamId}"
+        }
+    }
+}

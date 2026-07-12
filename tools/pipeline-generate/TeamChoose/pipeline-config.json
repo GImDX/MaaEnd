@@ -1,0 +1,8 @@
+{
+    "template": "pipeline-template.jsonc",
+    "data": "data.mjs",
+    "outputDir": "../../../assets/resource/pipeline/SceneManager",
+    "outputFile": "TeamChooseTeams.json",
+    "format": true,
+    "merged": true
+}
