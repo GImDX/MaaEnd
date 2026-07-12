@@ -12,7 +12,8 @@
                 "Wlroots"
             ],
             "option": [
-                "TeamChoose"
+                "TeamChoose",
+                "TeamChooseAllowCombatTeleport"
             ],
             "group": [
                 "open_world"
@@ -87,6 +88,36 @@
                                     "SceneChooseTeam05"
                                 ]
                             }
+                        }
+                    }
+                }
+            ]
+        },
+        "TeamChooseAllowCombatTeleport": {
+            "type": "switch",
+            "label": "$option.TeamChooseAllowCombatTeleport.label",
+            "description": "$option.TeamChooseAllowCombatTeleport.description",
+            "default_case": "No",
+            "cases": [
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "__ScenePrivateTeamChooseInCombatTeleport": {
+                            "enabled": true
+                        },
+                        "__ScenePrivateTeamChooseInCombatFailed": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "No",
+                    "pipeline_override": {
+                        "__ScenePrivateTeamChooseInCombatTeleport": {
+                            "enabled": false
+                        },
+                        "__ScenePrivateTeamChooseInCombatFailed": {
+                            "enabled": true
                         }
                     }
                 }

@@ -186,6 +186,8 @@
     "task.TeamChoose.label": "👥チーム選択",
     "task.TeamChoose.description": "チーム画面を開き、指定したチームを選択します。",
     "option.TeamChoose.label": "チーム",
+    "option.TeamChooseAllowCombatTeleport.label": "テレポートで戦闘から離脱する",
+    "option.TeamChooseAllowCombatTeleport.description": "戦闘中は公共テレポートポイントへ移動してからチームを切り替えます。無効の場合、タスクは直ちに失敗します。",
     "task.PullCountCalculator.label": "🧮 スカウト回数計算",
     "task.PullCountCalculator.description": "オペレーター募集画面の上部リソース欄を読み取り、貴重品庫のスカウト券もスキャンして、現在と次バージョンのスカウト回数を見積もります。先に対象の募集ページへ移動してください。",
     "task.PullCountCalculator.focus.start": "募集リソースと倉庫券を読み取り中",

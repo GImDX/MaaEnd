@@ -208,17 +208,6 @@
         "template": "AutoFight/Skill.png",
         "threshold": 0.4
     },
-    "__AutoFightRecognitionLeftMenuHide": {
-        "desc": "在大世界中，进入战斗状态时左上角菜单会自动隐藏",
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            350,
-            100
-        ],
-        "template": "AutoFight/LeftMenuHide.png"
-    },
     "__AutoFightRecognitionFightSpace": {
         "desc": "识别是否有干员菜单图标",
         "recognition": "Or",

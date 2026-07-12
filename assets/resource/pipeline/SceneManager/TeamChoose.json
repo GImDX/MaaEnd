@@ -83,7 +83,7 @@
         "rate_limit": 0
     },
     "__ScenePrivateTeamChooseEnter": {
-        "desc": "进入编队界面",
+        "desc": "检查战斗状态后进入编队界面",
         "pre_delay": 0,
         "action": {
             "type": "Custom",
@@ -92,6 +92,7 @@
                 "custom_action_param": {
                     "sub": [
                         "SceneAnyEnterWorld",
+                        "__ScenePrivateTeamChooseCombatCheck",
                         "SceneEnterMenuTeam"
                     ]
                 }
@@ -698,6 +699,102 @@
                 }
             }
         },
+        "post_delay": 0,
+        "rate_limit": 0
+    },
+    "__ScenePrivateTeamChooseCombatCheck": {
+        "desc": "进入编队界面前检查是否处于战斗状态",
+        "recognition": "DirectHit",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "__ScenePrivateTeamChooseInCombatTeleport",
+            "__ScenePrivateTeamChooseInCombatFailed",
+            "__ScenePrivateTeamChooseNotInCombat"
+        ]
+    },
+    "__ScenePrivateTeamChooseInCombatTeleport": {
+        "desc": "处于战斗状态时传送至四号谷地枢纽区并检查是否脱离战斗",
+        "enabled": false,
+        "recognition": "And",
+        "all_of": [
+            "InWorldCombat"
+        ],
+        "pre_delay": 0,
+        "action": "Custom",
+        "custom_action": "SubTask",
+        "custom_action_param": {
+            "sub": [
+                "SceneEnterWorldValleyIVTheHub",
+                "__ScenePrivateTeamChoosePostTeleportCheck"
+            ]
+        },
+        "post_delay": 0,
+        "rate_limit": 0,
+        "focus": {
+            "Node.Action.Starting": "处于战斗状态，正在通过传送脱离战斗"
+        }
+    },
+    "__ScenePrivateTeamChooseInCombatFailed": {
+        "desc": "处于战斗状态且未允许通过传送脱离战斗",
+        "enabled": true,
+        "recognition": "And",
+        "all_of": [
+            "InWorldCombat"
+        ],
+        "pre_delay": 0,
+        "action": "Custom",
+        "custom_action": "FalseAction",
+        "post_delay": 0,
+        "rate_limit": 0,
+        "focus": {
+            "Node.Action.Failed": "当前处于战斗状态，队伍选择任务已终止"
+        }
+    },
+    "__ScenePrivateTeamChooseNotInCombat": {
+        "desc": "当前不处于战斗状态，可以进入编队界面",
+        "recognition": "And",
+        "all_of": [
+            "InWorld"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0
+    },
+    "__ScenePrivateTeamChoosePostTeleportCheck": {
+        "desc": "传送后检查是否已经脱离战斗",
+        "recognition": "DirectHit",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "__ScenePrivateTeamChoosePostTeleportStillInCombat",
+            "__ScenePrivateTeamChoosePostTeleportEscaped"
+        ]
+    },
+    "__ScenePrivateTeamChoosePostTeleportStillInCombat": {
+        "desc": "传送后仍处于战斗状态",
+        "recognition": "And",
+        "all_of": [
+            "InWorldCombat"
+        ],
+        "pre_delay": 0,
+        "action": "Custom",
+        "custom_action": "FalseAction",
+        "post_delay": 0,
+        "rate_limit": 0,
+        "focus": {
+            "Node.Action.Failed": "传送后仍处于战斗状态，队伍选择任务已终止"
+        }
+    },
+    "__ScenePrivateTeamChoosePostTeleportEscaped": {
+        "desc": "传送后已返回非战斗大世界",
+        "recognition": "And",
+        "all_of": [
+            "InWorld"
+        ],
+        "pre_delay": 0,
         "post_delay": 0,
         "rate_limit": 0
     }

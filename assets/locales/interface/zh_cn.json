@@ -190,6 +190,8 @@
     "task.TeamChoose.label": "👥选择队伍",
     "task.TeamChoose.description": "自动进入队伍界面并选择指定队伍。",
     "option.TeamChoose.label": "队伍",
+    "option.TeamChooseAllowCombatTeleport.label": "允许通过传送脱离战斗",
+    "option.TeamChooseAllowCombatTeleport.description": "处于战斗状态时，传送至公共传送点后再切换队伍；关闭时任务直接失败。",
     "task.PullCountCalculator.label": "🧮抽数计算",
     "task.PullCountCalculator.description": "从干员寻访界面读取顶部资源栏，再进入贵重品库扫描寻访券，估算当前池和下版本池子抽数。请先手动切到目标寻访页面。",
     "task.PullCountCalculator.focus.start": "正在读取寻访资源并扫描仓库券",
