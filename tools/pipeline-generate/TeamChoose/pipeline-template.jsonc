@@ -1,6 +1,6 @@
 {
-    "SceneChooseTeam${TeamId}": {
-        "desc": "从任意界面选择目标队伍 ${TeamId} 并返回大世界",
+    "__ScenePrivateTeamChoose${TeamId}": {
+        "desc": "选择目标队伍 ${TeamId} 的内部流程",
         "pre_delay": 0,
         "action": "Custom",
         "custom_action": "SubTask",

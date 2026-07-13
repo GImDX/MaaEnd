@@ -1,0 +1,17 @@
+{
+    "configs": {
+        "name": "编队出战按钮状态识别",
+        "resource": "官服",
+        "controller": "Win32"
+    },
+    "cases": [
+        {
+            "name": "目标队伍已选中但尚未出战",
+            "image": "官服_编队_队伍05已选中_完整.png",
+            "hits": [
+                "__ScenePrivateTeamChooseDeployButtonState",
+                "__ScenePrivateTeamChooseDeploy"
+            ]
+        }
+    ]
+}

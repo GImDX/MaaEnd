@@ -18,7 +18,8 @@
                         36
                     ]
                 },
-                "InWorldCombat"
+                "InWorldCombat",
+                "SceneChooseTeamInCombatFailed"
             ]
         },
         {

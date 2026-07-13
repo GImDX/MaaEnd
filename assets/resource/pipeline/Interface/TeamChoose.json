@@ -1,0 +1,52 @@
+{
+    // 只能使用本文件及 TeamChooseTeams.json 中定义的接口，禁止直接引用 SceneManager 中的 __ScenePrivate 节点
+    "SceneChooseTeam": {
+        "desc": "从任意界面选择默认目标队伍 01 并返回大世界",
+        "pre_delay": 0,
+        "action": "Custom",
+        "custom_action": "SubTask",
+        "custom_action_param": {
+            "sub": [
+                "SceneChooseTeam01"
+            ]
+        },
+        "post_delay": 0,
+        "rate_limit": 0
+    },
+    "SceneChooseTeamInCombatTeleport": {
+        "desc": "处于战斗状态时传送至公共传送点后再选择队伍",
+        "enabled": false,
+        "recognition": "And",
+        "all_of": [
+            "InWorldCombat"
+        ],
+        "pre_delay": 0,
+        "action": "Custom",
+        "custom_action": "SubTask",
+        "custom_action_param": {
+            "sub": [
+                "__ScenePrivateTeamChooseInCombatTeleport"
+            ]
+        },
+        "post_delay": 0,
+        "rate_limit": 0
+    },
+    "SceneChooseTeamInCombatFailed": {
+        "desc": "处于战斗状态时终止队伍选择",
+        "enabled": true,
+        "recognition": "And",
+        "all_of": [
+            "InWorldCombat"
+        ],
+        "pre_delay": 0,
+        "action": "Custom",
+        "custom_action": "SubTask",
+        "custom_action_param": {
+            "sub": [
+                "__ScenePrivateTeamChooseInCombatFailed"
+            ]
+        },
+        "post_delay": 0,
+        "rate_limit": 0
+    }
+}

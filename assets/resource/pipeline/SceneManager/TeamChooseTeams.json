@@ -1,6 +1,6 @@
 {
-    "SceneChooseTeam01": {
-        "desc": "从任意界面选择目标队伍 01 并返回大世界",
+    "__ScenePrivateTeamChoose01": {
+        "desc": "选择目标队伍 01 的内部流程",
         "pre_delay": 0,
         "action": "Custom",
         "custom_action": "SubTask",
@@ -123,8 +123,8 @@
             "Node.Action.Succeeded": "选择队伍 01"
         }
     },
-    "SceneChooseTeam02": {
-        "desc": "从任意界面选择目标队伍 02 并返回大世界",
+    "__ScenePrivateTeamChoose02": {
+        "desc": "选择目标队伍 02 的内部流程",
         "pre_delay": 0,
         "action": "Custom",
         "custom_action": "SubTask",
@@ -247,8 +247,8 @@
             "Node.Action.Succeeded": "选择队伍 02"
         }
     },
-    "SceneChooseTeam03": {
-        "desc": "从任意界面选择目标队伍 03 并返回大世界",
+    "__ScenePrivateTeamChoose03": {
+        "desc": "选择目标队伍 03 的内部流程",
         "pre_delay": 0,
         "action": "Custom",
         "custom_action": "SubTask",
@@ -371,8 +371,8 @@
             "Node.Action.Succeeded": "选择队伍 03"
         }
     },
-    "SceneChooseTeam04": {
-        "desc": "从任意界面选择目标队伍 04 并返回大世界",
+    "__ScenePrivateTeamChoose04": {
+        "desc": "选择目标队伍 04 的内部流程",
         "pre_delay": 0,
         "action": "Custom",
         "custom_action": "SubTask",
@@ -495,8 +495,8 @@
             "Node.Action.Succeeded": "选择队伍 04"
         }
     },
-    "SceneChooseTeam05": {
-        "desc": "从任意界面选择目标队伍 05 并返回大世界",
+    "__ScenePrivateTeamChoose05": {
+        "desc": "选择目标队伍 05 的内部流程",
         "pre_delay": 0,
         "action": "Custom",
         "custom_action": "SubTask",

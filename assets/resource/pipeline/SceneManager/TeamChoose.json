@@ -1,17 +1,4 @@
 {
-    "SceneChooseTeam": {
-        "desc": "从任意界面选择默认目标队伍 01 并返回大世界",
-        "pre_delay": 0,
-        "action": "Custom",
-        "custom_action": "SubTask",
-        "custom_action_param": {
-            "sub": [
-                "SceneChooseTeam01"
-            ]
-        },
-        "post_delay": 0,
-        "rate_limit": 0
-    },
     "__ScenePrivateTeamChooseEnter": {
         "desc": "检查战斗状态后进入编队界面",
         "pre_delay": 0,
@@ -41,14 +28,13 @@
         "post_delay": 0,
         "rate_limit": 0,
         "next": [
-            "__ScenePrivateTeamChooseInCombatTeleport",
-            "__ScenePrivateTeamChooseInCombatFailed",
+            "SceneChooseTeamInCombatTeleport",
+            "SceneChooseTeamInCombatFailed",
             "__ScenePrivateTeamChooseNotInCombat"
         ]
     },
     "__ScenePrivateTeamChooseInCombatTeleport": {
         "desc": "处于战斗状态时传送至四号谷地枢纽区并检查是否脱离战斗",
-        "enabled": false,
         "recognition": "And",
         "all_of": [
             "InWorldCombat"
@@ -70,7 +56,6 @@
     },
     "__ScenePrivateTeamChooseInCombatFailed": {
         "desc": "处于战斗状态且未允许通过传送脱离战斗",
-        "enabled": true,
         "recognition": "And",
         "all_of": [
             "InWorldCombat"
@@ -146,7 +131,19 @@
         "rate_limit": 0
     },
     "__ScenePrivateTeamChooseConfirm": {
-        "desc": "确认队伍选择",
+        "desc": "根据出战按钮状态确认是否需要切换当前出战队伍",
+        "recognition": "DirectHit",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "__ScenePrivateTeamChooseDeploy",
+            "__ScenePrivateTeamChooseAlreadyDeployed",
+            "__ScenePrivateTeamChooseFailed"
+        ]
+    },
+    "__ScenePrivateTeamChooseDeployButtonState": {
+        "desc": "识别黄色出战按钮",
         "recognition": "TemplateMatch",
         "roi": [
             1080,
@@ -156,29 +153,119 @@
         ],
         "template": [
             "Common/Button/YellowConfirmButtonType2.png",
-            "Common/Button/WhiteConfirmButtonType2.png"
+            "Common/Button/YellowConfirmButtonType2Hover.png"
         ],
-        "threshold": 0.8,
+        "threshold": 0.9,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0
+    },
+    "__ScenePrivateTeamChooseAlreadyDeployedButtonState": {
+        "desc": "识别白色已出战按钮",
+        "recognition": "TemplateMatch",
+        "roi": [
+            1080,
+            600,
+            200,
+            120
+        ],
+        "template": [
+            "Common/Button/WhiteConfirmButtonType2.png",
+            "Common/Button/WhiteConfirmButtonType2Hover.png"
+        ],
+        "threshold": 0.9,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0
+    },
+    "__ScenePrivateTeamChooseDeploy": {
+        "desc": "点击黄色出战按钮切换当前出战队伍",
+        "recognition": "And",
+        "all_of": [
+            "__ScenePrivateTeamChooseTabAnchor",
+            "__ScenePrivateTeamChooseDeployButtonState"
+        ],
         "pre_delay": 0,
         "action": "Click",
-        "post_wait_freezes": 200,
+        "target": [
+            1080,
+            600,
+            200,
+            120
+        ],
+        "post_wait_freezes": {
+            "time": 200,
+            "target": [
+                1080,
+                600,
+                200,
+                120
+            ]
+        },
         "post_delay": 0,
+        "rate_limit": 0,
         "next": [
-            "__ScenePrivateTeamChooseReturnWorld"
+            "__ScenePrivateTeamChooseDeploySucceeded",
+            "__ScenePrivateTeamChooseDeployNotApplied",
+            "__ScenePrivateTeamChooseFailed"
         ],
         "focus": {
-            "Node.Action.Succeeded": "确认队伍选择"
+            "Node.Action.Succeeded": "确认切换出战队伍"
         }
     },
-    "__ScenePrivateTeamChooseFailed": {
-        "desc": "队伍切换失败",
+    "__ScenePrivateTeamChooseAlreadyDeployed": {
+        "desc": "目标队伍已经出战，无需再次切换",
+        "recognition": "And",
+        "all_of": [
+            "__ScenePrivateTeamChooseTabAnchor",
+            "__ScenePrivateTeamChooseAlreadyDeployedButtonState"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "__ScenePrivateTeamChooseReturnWorld"
+        ]
+    },
+    "__ScenePrivateTeamChooseDeploySucceeded": {
+        "desc": "点击出战后按钮已切换为白色已出战状态",
+        "recognition": "And",
+        "all_of": [
+            "__ScenePrivateTeamChooseTabAnchor",
+            "__ScenePrivateTeamChooseAlreadyDeployedButtonState"
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "rate_limit": 0,
+        "next": [
+            "__ScenePrivateTeamChooseReturnWorld"
+        ]
+    },
+    "__ScenePrivateTeamChooseDeployNotApplied": {
+        "desc": "点击出战后黄色按钮仍然存在，队伍切换未生效",
+        "recognition": "And",
+        "all_of": [
+            "__ScenePrivateTeamChooseTabAnchor",
+            "__ScenePrivateTeamChooseDeployButtonState"
+        ],
         "pre_delay": 0,
         "action": "Custom",
         "custom_action": "FalseAction",
         "post_delay": 0,
         "rate_limit": 0,
         "focus": {
-            "Node.Action.Failed": "队伍切换后未确认目标队伍已选中"
+            "Node.Action.Failed": "点击出战后队伍切换未生效"
+        }
+    },
+    "__ScenePrivateTeamChooseFailed": {
+        "desc": "无法识别目标队伍或出战按钮状态",
+        "pre_delay": 0,
+        "action": "Custom",
+        "custom_action": "FalseAction",
+        "post_delay": 0,
+        "rate_limit": 0,
+        "focus": {
+            "Node.Action.Failed": "无法确认目标队伍或出战按钮状态"
         }
     },
     "__ScenePrivateTeamChooseReturnWorld": {

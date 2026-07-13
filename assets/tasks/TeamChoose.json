@@ -102,10 +102,10 @@
                 {
                     "name": "Yes",
                     "pipeline_override": {
-                        "__ScenePrivateTeamChooseInCombatTeleport": {
+                        "SceneChooseTeamInCombatTeleport": {
                             "enabled": true
                         },
-                        "__ScenePrivateTeamChooseInCombatFailed": {
+                        "SceneChooseTeamInCombatFailed": {
                             "enabled": false
                         }
                     }
@@ -113,10 +113,10 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "__ScenePrivateTeamChooseInCombatTeleport": {
+                        "SceneChooseTeamInCombatTeleport": {
                             "enabled": false
                         },
-                        "__ScenePrivateTeamChooseInCombatFailed": {
+                        "SceneChooseTeamInCombatFailed": {
                             "enabled": true
                         }
                     }

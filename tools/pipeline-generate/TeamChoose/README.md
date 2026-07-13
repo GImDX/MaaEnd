@@ -10,6 +10,7 @@ pnpm generate:TeamChoose
 
 The command regenerates:
 
+- `assets/resource/pipeline/Interface/TeamChooseTeams.json`
 - `assets/resource/pipeline/SceneManager/TeamChooseTeams.json`
 - `assets/tasks/TeamChoose.json`
 

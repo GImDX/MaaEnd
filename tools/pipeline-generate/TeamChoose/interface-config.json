@@ -1,0 +1,8 @@
+{
+    "template": "interface-template.jsonc",
+    "data": "data.mjs",
+    "outputDir": "../../../assets/resource/pipeline/Interface",
+    "outputFile": "TeamChooseTeams.json",
+    "format": true,
+    "merged": true
+}
